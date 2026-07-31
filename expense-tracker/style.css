@@ -1,0 +1,101 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:400px;
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.balance{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.summary{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+    background:#eee;
+    padding:15px;
+    border-radius:8px;
+}
+
+.summary div{
+    text-align:center;
+    width:45%;
+}
+
+#income{
+    color:green;
+}
+
+#expense{
+    color:red;
+}
+
+ul{
+    list-style:none;
+    margin:20px 0;
+}
+
+li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#fafafa;
+    margin:10px 0;
+    padding:10px;
+    border-right:5px solid green;
+}
+
+li.minus{
+    border-color:red;
+}
+
+.delete-btn{
+    background:red;
+    color:#fff;
+    border:none;
+    padding:5px 10px;
+    cursor:pointer;
+    border-radius:4px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+}
+
+input{
+    margin-bottom:10px;
+    padding:10px;
+}
+
+button{
+    padding:10px;
+    border:none;
+    background:#4CAF50;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>🔐 Password Generator</h2>
+
+    <div class="input-group">
+        <input type="number" id="length" value="12" min="4" max="64">
+    </div>
+
+    <button onclick="createPassword()">Generate Password</button>
+
+    <div class="password-box" id="password">
+        Your password will appear here
+    </div>
+
+    <button class="copy-btn" onclick="copyPassword()">
+        📋 Copy Password
+    </button>
+</div>
+
+<script>
+function generatePassword(length = 12) {
+    const chars =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}|;:,.<>?";
+
+    let password = "";
+    const array = new Uint32Array(length);
+    crypto.getRandomValues(array);
+
+    for (let i = 0; i < length; i++) {
+        password += chars[array[i] % chars.length];
+    }
+
+    return password;
+}
+
+function createPassword() {
+    const length = parseInt(document.getElementById("length").value);
+    document.getElementById("password").textContent =
+        generatePassword(length);
+}
+</script>
+
+</body>
+</html>
